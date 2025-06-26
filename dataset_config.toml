@@ -1,0 +1,8 @@
+[general]
+flip_aug = true  
+
+[[datasets]]
+root_dir = "dataset"
+
+  [[datasets.subsets]]
+  metadata_file = "metadata.jsonl"
