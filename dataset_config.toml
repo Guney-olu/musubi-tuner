@@ -2,7 +2,7 @@
 flip_aug = true  
 
 [[datasets]]
-root_dir = "dataset"
 
   [[datasets.subsets]]
+  root_dir = "dataset"
   metadata_file = "metadata.jsonl"
