@@ -1,20 +1,12 @@
-# dataset_config_framepack.toml
-
+# dataset_config.toml
 [general]
-# Default resolution for FramePack is 640x640, but you can adjust.
-resolution = [640, 640]
-caption_extension = ".txt"
-enable_bucket = true
+resolution = [640, 640]  # Default FramePack resolution. Adjust if your source videos are different.
+frame_extraction = "full"
+max_frames = 150 # ~5 seconds at 30fps. Set higher if your clips are longer.
 
 [[datasets]]
-  # This points to your training videos and their captions.
-  video_directory = "framepack_dataset/videos/"
-  
-  # A separate cache directory is highly recommended.
-  cache_directory = "framepack_cache"
-  
-  # Use 'full' extraction to train on entire video clips.
-  frame_extraction = "full"
-  
-  # Set a high enough limit. The video will be trimmed to a multiple of "N * latent_window_size * 4 + 1" anyway.
-  max_frames = 129
+[[datasets.subsets]]
+type = "video"
+video_dir = "framepack_dataset/videos"
+caption_extension = ".txt"
+num_repeats = 10 # Train more on each video
