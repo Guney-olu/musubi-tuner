@@ -6,7 +6,7 @@ enable_bucket = true
 
 [[datasets]]
   # This points to your training videos and their captions.
-  video_directory = "framepack_dataset/videos/"
+  video_directory = "framepack_dataset/videos_trimmed"
   
   # A separate cache directory is highly recommended.
   cache_directory = "framepack_cache"
@@ -14,4 +14,4 @@ enable_bucket = true
   # Use 'full' extraction to train on entire video clips.
   frame_extraction = "full"
   
-  max_frames = 150
+  max_frames = 129
